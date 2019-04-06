@@ -1,58 +1,152 @@
 <!DOCTYPE html>
 <html>
     <head>    
-            <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;subset=korean" rel="stylesheet">
         <style>
-        a{color:8C0A84;
+        #submitButton{
+            margin-top:20px;
+            height:50px;
+        }
+        .selectButton{
+            width:calc(50% - 5px);
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #FFFFFF;
+            min-height:37px;
+            border-radius: solid 4px; 
+            border: solid 2px #e6e6e6;
+        
+        }
+        .messageInput{
+            height:280px;
+            width:100%;
+
+        }
+        a{color:#8C0A84;
         }
         input{
             border: solid 2px #e6e6e6;
             border-radius: 4px;
             margin-top:8px;
+            min-height:48px;
+            width:100%;
+            padding-left:10px;
+            padding-right:10px;
+           
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        button{
+            border: solid 2px #e6e6e6;
+            border-radius: 4px;
+            margin-top:8px;
             min-height:40px;
             width:100%;
-        }
+            padding-left:10px;
+            padding-right:10px;
+          
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: #FFFFFF;
+        }       
         div{
             padding:20px;
         }
-        p{margin:0;
-
+        h2{
+            margin: 20px 0 20px 0;
+            font-weight: 300;
+            display:inline;
+        }
+        .userName{
+            font-weight:500;
+        }
+        h3{
+            margin: 0px;
+            vertical-align: center;
+        }    
+        p{
+            margin:0;
+            font-weight:400;
+            font-size: 12px;
+        }.inputLabel{
+            margin-top:20px;
+        }
+        body{
+            font-family: 'Noto Sans KR', sans-serif;
+            margin:0;
+            color:#333333
         }
         </style>
+        <script>
+           var username;
+           var amount;
+           var primaryColor= '#FBA000';
+           var secondaryColor= '#8C0A84';
+           var amountButton= ['buttonOne','buttonTwo','buttonThree','buttonFour']
+           function changeButton(self){
+           buttonOne.style.backgroundColor='#FFFFFF';
+           buttonTwo.style.backgroundColor='#FFFFFF';
+           buttonThree.style.backgroundColor='#FFFFFF';
+           buttonFour.style.backgroundColor='#FFFFFF';
+           self.style.backgroundColor=primaryColor;
+           }
+           function submit(){
+                submitButton.style.backgroundColor=secondaryColor;
+                submitButton.style.color='#FFFFFF';
+                submitButton.style.weight='700';
+                submitButton.style.border=0;
+                }
+        </script>
     </head>
     <body>
+        <div style="height:40px; 
+        background-color: #FBA000;
+                color:#8C0A84;
+                vertical-align:middle;"
+                >
+            <h3>Free Donation Mesage Beta</h>
+        </div>
         <div>
-            <h1>Free Donation Mesage</h1>
-            <p>Name</p>
-            <input type="text">
-            </input>
-            
-            <p>Cost</p>
-            <input type="text">
-            <input type="button">
-            <input type="button">
-            <input type="button">
-            <input type="button">
-                </input>
-            </div>
-            <div>
-                <p>Message/p>
-                <input type="text">
-                </input>
-            </div>
-            <script>
-            var coworkers = ['egoing','leezche','duru','taeho'];
+           
+            <script> 
+            document.write('<h2>Hello, </h2><h2 class="userName">'+username+'!</h2>');
+
             </script>
-            <h2>Coworkers</h2>
-            <ul>
-                <script>
-                    var i=0;
-                    while(i< coworkers.length){
-                    document.write ('<li>'+coworkers[i]+'</li>');
-                    i=i+1;
-                }
-                </script>
-            </ul>
+
+            <p class="inputLabel">Name</p>
+            <input type="text" id="username">
+                            
+            <p class="inputLabel">Amount</p>
+            <input type="number" id="amount" placeholder="Amount">
+            <div style="padding:0;">
+                <input class="selectButton" id='buttonOne' type="button" id="amount" value="Free Message" onclick='
+                amount=0;
+                changeButton(this);
+                '>
+                <input class="selectButton" id='buttonTwo' type="button" id="amount" value="$1.00" style="float:right;" onclick='
+                amount=1000;
+                changeButton(this);
+                '>
+                <input class="selectButton" id='buttonThree' type="button" id="amount" value="$2.00" onclick='
+                amount=2000;
+                changeButton(this);
+                '>
+                <input class="selectButton" id='buttonFour' type="button" id="amount" value="$5.00" style="float:right;"  onclick='
+                amount=5000;
+                changeButton(this);
+                
+                '>
+            </div>
+            <p class="inputLabel">Message</p>
+            <input type="text" class="messageInput" placeholder='메시지를 입력해주세요.'>
+            <button id='submitButton' onclick='
+            submit();
+            '>
+            Submit
+            </button>
+        
+            
         </div>   
     </body>
 </html>
