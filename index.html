@@ -33,7 +33,16 @@
             width:100%;
             padding-left:10px;
             padding-right:10px;
-           
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        textarea{
+            border: solid 2px #e6e6e6;
+            border-radius: 4px;
+            margin-top:8px;
+            min-height:48px;
+            width:100%;
+            padding:10px;
             box-sizing: border-box;
             font-size: 14px;
         }
@@ -79,19 +88,19 @@
         }
         </style>
         <script>
-           var username;
-           var amount;
-           var primaryColor= '#FBA000';
-           var secondaryColor= '#8C0A84';
-           var amountButton= ['buttonOne','buttonTwo','buttonThree','buttonFour']
-           function changeButton(self){
-           buttonOne.style.backgroundColor='#FFFFFF';
-           buttonTwo.style.backgroundColor='#FFFFFF';
-           buttonThree.style.backgroundColor='#FFFFFF';
-           buttonFour.style.backgroundColor='#FFFFFF';
-           self.style.backgroundColor=primaryColor;
-           }
-           function submit(){
+            var username;
+            var amount;
+            var primaryColor= '#FBA000';
+            var secondaryColor= '#8C0A84';
+            var amountButton= ['buttonOne','buttonTwo','buttonThree','buttonFour']
+                function changeButton(self){
+                buttonOne.style.backgroundColor='#FFFFFF';
+                buttonTwo.style.backgroundColor='#FFFFFF';
+                buttonThree.style.backgroundColor='#FFFFFF';
+                buttonFour.style.backgroundColor='#FFFFFF';
+                self.style.backgroundColor=primaryColor;
+            }
+            function submit(){
                 submitButton.style.backgroundColor=secondaryColor;
                 submitButton.style.color='#FFFFFF';
                 submitButton.style.weight='700';
@@ -113,39 +122,39 @@
             document.write('<h2>Hello, </h2><h2 class="userName">'+username+'!</h2>');
 
             </script>
+            <form action="localhost:3000/process_message">
 
-            <p class="inputLabel">Name</p>
-            <input type="text" id="username">
-                            
-            <p class="inputLabel">Amount</p>
-            <input type="number" id="amount" placeholder="Amount">
-            <div style="padding:0;">
-                <input class="selectButton" id='buttonOne' type="button" id="amount" value="Free Message" onclick='
-                amount=0;
-                changeButton(this);
-                '>
-                <input class="selectButton" id='buttonTwo' type="button" id="amount" value="$1.00" style="float:right;" onclick='
-                amount=1000;
-                changeButton(this);
-                '>
-                <input class="selectButton" id='buttonThree' type="button" id="amount" value="$2.00" onclick='
-                amount=2000;
-                changeButton(this);
-                '>
-                <input class="selectButton" id='buttonFour' type="button" id="amount" value="$5.00" style="float:right;"  onclick='
-                amount=5000;
-                changeButton(this);
-                
-                '>
-            </div>
-            <p class="inputLabel">Message</p>
-            <input type="text" class="messageInput" placeholder='메시지를 입력해주세요.'>
-            <button id='submitButton' onclick='
-            submit();
-            '>
-            Submit
-            </button>
-        
+                <p class="inputLabel">Name</p>
+                <input type="text" name="username" id="username">
+                                
+                <p class="inputLabel">Amount</p>
+                <input type="number" name="amount" id="amount" placeholder="Amount">
+                <div style="padding:0;">
+                    <input class="selectButton" id='buttonOne' type="button" id="amount" value="Free Message" onclick='
+                    amount=0;
+                    changeButton(this);
+                    '>
+                    <input class="selectButton" id='buttonTwo' type="button" id="amount" value="$1.00" style="float:right;" onclick='
+                    amount=1000;
+                    changeButton(this);
+                    '>
+                    <input class="selectButton" id='buttonThree' type="button" id="amount" value="$2.00" onclick='
+                    amount=2000;
+                    changeButton(this);
+                    '>
+                    <input class="selectButton" id='buttonFour' type="button" id="amount" value="$5.00" style="float:right;"  onclick='
+                    amount=5000;
+                    changeButton(this);
+                    
+                    '>
+                </div>
+                <p class="inputLabel">Message</p>
+            
+                <textarea type="text" name="message" class="messageInput" placeholder='메시지를 입력해주세요.'></textarea>
+                <button type="submit" id='submitButton'>
+                Submit
+                </button>
+            </form>
             
         </div>   
     </body>
