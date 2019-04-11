@@ -9,6 +9,12 @@ function submit(){
 }
 function save(){
 }
+function readFile(link){
+  fs.readFile(link, 'utf8', function(err, description){
+  });
+  response.writeHead(200);
+  response.end(template);
+}
 
 //from this line, everything came from the example.
 var http = require('http');
