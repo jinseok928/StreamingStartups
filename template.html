@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>    
+        <title>#{streamer}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;subset=korean" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-       
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:300,800" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+<!--        
         <script>
             var username;
             var amount;
             var primaryColor= '#FBA000';
             var secondaryColor= '#8C0A84';
-            var amountButton= ['buttonOne','buttonTwo','buttonThree','buttonFour']
-                function changeButton(self){
-                buttonOne.style.backgroundColor='#FFFFFF';
-                buttonTwo.style.backgroundColor='#FFFFFF';
-                buttonThree.style.backgroundColor='#FFFFFF';
-                buttonFour.style.backgroundColor='#FFFFFF';
-                self.style.backgroundColor=primaryColor;
-            }
-            function submit(){
-                submitButton.style.backgroundColor=secondaryColor;
-                submitButton.style.color='#FFFFFF';
-                submitButton.style.weight='700';
-                submitButton.style.border=0;
-                }
-        </script>
+            // var amountButton= ['buttonOne','buttonTwo','buttonThree','buttonFour']
+            //     function changeButton(self){
+            //     buttonOne.style.backgroundColor='#FFFFFF';
+            //     buttonTwo.style.backgroundColor='#FFFFFF';
+            //     buttonThree.style.backgroundColor='#FFFFFF';
+            //     buttonFour.style.backgroundColor='#FFFFFF';
+            //     self.style.backgroundColor=primaryColor;
+            // }
+            // function submit(){
+            //     submitButton.style.backgroundColor=secondaryColor;
+            //     submitButton.style.color='#FFFFFF';
+            //     submitButton.style.weight='700';
+            //     submitButton.style.border=0;
+            //     }
+        </script> -->
     </head>
     <body>
-        <div style="height:40px; 
-        background-color: #FBA000;
-                color:#8C0A84;
-                vertical-align:middle;"
-                >
-            <h3>Free Donation Mesage Beta</h>
+        <div class="header">
+            <h3 style="color:white;">Free Speech Message</h3>
+            <h1>to <b>Nanajam777</b></h1>
         </div>
         <div>
            
-            <script> 
-            document.write('<h2>Hello, </h2><h2 class="userName">'+username+'!</h2>');
-
-            </script>
             <form action="localhost:3000/process_message">
 
-                <p class="inputLabel">Name</p>
+                <p class="inputLabel">Username</p>
                 <input type="text" name="username" id="username">
-                                
+<!--                                 
                 <p class="inputLabel">Amount</p>
                 <input type="number" name="amount" id="amount" placeholder="Amount">
                 <div style="padding:0;">
@@ -65,10 +59,10 @@
                     changeButton(this);
                     
                     '>
-                </div>
+                </div> -->
                 <p class="inputLabel">Message</p>
             
-                <textarea type="text" name="message" class="messageInput" placeholder='메시지를 입력해주세요.'></textarea>
+                <textarea type="text" name="message" class="messageInput" placeholder='What do you want to say to your streamer?'></textarea>
                 <button type="submit" id='submitButton'>
                 Submit
                 </button>
